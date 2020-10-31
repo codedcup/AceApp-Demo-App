@@ -1,0 +1,96 @@
+public class BankDetailsFragment extends Fragment {
+
+    private TextInputLayout accountLayout;
+    private TextInputLayout confirmAccountLayout;
+    private TextInputLayout ifscLayout;
+    private TextInputEditText account;
+    private TextInputEditText confirmAccount;
+    private TextInputEditText ifsc;
+
+    @Override
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_bank_details, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        String urlParameters = "user_id=12" +
+                                "&account_number=" + account.getText().toString() +
+                                "&ifsc_code=" + ifsc.getText().toString();
+        new HttpRequest(urlParameters).execute();
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private class HttpRequest extends AsyncTask<String, Void, JSONObject> {
+
+        private String urlParameters;
+        private ProgressDialog progress;
+
+        HttpRequest(String urlParameters) {
+            this.urlParameters = urlParameters;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progress= new ProgressDialog(getActivity());
+            progress.setMessage("Verifying Bank Account Please wait...");
+            progress.show();
+            progress.setCanceledOnTouchOutside(false);
+        }
+
+        @Override
+        protected JSONObject doInBackground(String... strings) {
+            try {
+                URL url = new URL("http://someurl.com/" + "?" + urlParameters);
+                final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod(Server.METHOD_DEFAULT);
+                connection.setRequestProperty(Server.HEADER_KEY, Server.HEADER_VALUE);
+                connection.setReadTimeout(10 * 1000);
+                connection.setConnectTimeout(10 * 1000);
+                connection.setDoOutput(true);
+                connection.setDoInput(true);
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String line;
+                final StringBuilder responseOutput = new StringBuilder();
+                while ((line = br.readLine()) != null) {
+                    responseOutput.append(line);
+                }
+                br.close();
+
+                return new JSONObject(String.valueOf(responseOutput));
+
+            } catch (final Exception e) {
+                Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        AlertDialog alertDialog = new AlertDialog.Builder(getActivity()).create();
+                        alertDialog.setMessage("Error | " + e);
+                        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "OK",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+                        alertDialog.show();
+                    }
+                });
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject jsonObject) {
+            progress.dismiss();
+            try {
+                
+            } catch (JSONException ignored) {
+
+            }
+
+            //Toast.makeText(getActivity(), jsonObject.toString(), Toast.LENGTH_LONG).show();
+        }
+    }
+}
