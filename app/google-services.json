@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "757899805212",
+    "firebase_url": "https://aceapp-8b827.firebaseio.com",
+    "project_id": "aceapp-8b827",
+    "storage_bucket": "aceapp-8b827.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757899805212:android:da03327f4a80cb11",
+        "android_client_info": {
+          "package_name": "com.codedcup.aceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757899805212-dbl870ipguu7j7iopmlfqdu48sikkpvi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codedcup.aceapp",
+            "certificate_hash": "fa9f91ea8e9a9cecdebaa7a975f3f9410b12dee3"
+          }
+        },
+        {
+          "client_id": "757899805212-j4cu7q55siilc6k480uq9bnk62j97b5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQICx9a-olcR6wZOVWl9vdS4jpneALV_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757899805212-j4cu7q55siilc6k480uq9bnk62j97b5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

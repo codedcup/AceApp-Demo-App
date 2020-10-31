@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.admin.AdminDashboardActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_user_account_details_appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/activity_user_account_details_collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
+
+            <FrameLayout
+                android:id="@+id/activity_user_account_details_frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.3">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_more_vert_white_32dp"
+                    android:layout_marginRight="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/activity_user_account_details_collapsing_toolbar_linear_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginBottom="48dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/activity_user_account_details_profile_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@drawable/pro_placeholder"/>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="admin@gmail.com"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginBottom="16dp"/>
+            </FrameLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/activity_admin_dashboard_manageStudent"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    app:cardElevation="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp">
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        
+                        <ImageView
+                            android:id="@+id/activity_admin_dashboard_student_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_student"
+                            android:layout_marginStart="24dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Manage Students"
+                            android:textSize="16sp"
+                            android:layout_marginStart="48dp"
+                            android:layout_toEndOf="@+id/activity_admin_dashboard_student_image"
+                            android:layout_marginLeft="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/activity_admin_dashboard_student_image" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/activity_admin_dashboard_manageFaculty"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    app:cardElevation="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/activity_admin_dashboard_faculty_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_teacher"
+                            android:layout_marginStart="24dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Manage Faculty"
+                            android:textSize="16sp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginLeft="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/activity_admin_dashboard_faculty_image"
+                            android:layout_toRightOf="@+id/activity_admin_dashboard_faculty_image" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
+

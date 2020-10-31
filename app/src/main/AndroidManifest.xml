@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.codedcup.aceapp">
+
+    <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="ANDROID.PERMISSION.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".infrastructure.AceApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".activities.admin.EditStudent" />
+        <activity android:name=".activities.common.UploadActivity" />
+        <activity android:name=".activities.admin.RemoveStudentActivity" />
+        <activity android:name=".activities.admin.AddStudentActivity" />
+        <activity
+            android:name=".activities.parent.ParentDashboardActivity"
+            android:label="@string/title_activity_parent_dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.admin.ManageStudentActivity" />
+        <activity android:name=".activities.faculty.FacultyDashboardActivity" />
+        <activity android:name=".activities.admin.AdminDashboardActivity" />
+        <activity android:name=".activities.student.StudentDashboardActivity" />
+        <activity android:name=".activities.common.MainActivity" />
+        <activity android:name=".activities.common.LoginActivity" />
+        <activity android:name=".activities.common.AcademicInfoActivity" />
+        <activity android:name=".activities.parent.ParentSignupActivity" />
+        <activity android:name=".activities.student.StudentSignupActivity" />
+        <activity android:name=".activities.common.UserTypeActivity" />
+        <activity android:name=".activities.common.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

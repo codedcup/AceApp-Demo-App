@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".activities.common.DownloadActivity"
+        android:background="@color/colorPrimaryDark"
+        android:padding="24dp">
+
+    <TextView
+        android:id="@+id/download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="DOWNLOAD NOTES"
+        android:textSize="32sp"
+        android:textStyle="bold"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/activity_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="File1.pdf"
+                android:textSize="16sp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/dated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12-05-2019"
+                android:textSize="12sp"
+                android:layout_below="@+id/activity_download"/>
+
+            <TextView
+                android:id="@+id/details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View More Details"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/dated"/>
+
+            <Button
+                android:id="@+id/download1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
